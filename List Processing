@@ -1,0 +1,16 @@
+# 1. Have a function that creates a list of 20 random integers between 1 and 100 (Assign them
+# dynamically, store the list in a variable.)
+# 2. Have a function get a number from the user that is between 1 and 100. Use a try-except
+# statement to validate that an integer is entered. Place the try-except statement inside a
+# while loop that validates that the value is between 1 and 100.
+# 3. Pass both the list and the user's number to a function and have it display all numbers in the
+# list that are greater than the user's number. If there are not any, display a message that
+# explains there are no numbers in the list greater than the entered number.
+
+
+def main():
+
+    number = int(input("Please enter a whole number between 0 and 100: "))
+
+
+main()
