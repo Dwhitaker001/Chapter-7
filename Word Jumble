@@ -1,0 +1,56 @@
+# Word Jumble Game: guess the word made by the jumbled letters
+# Pseudocode:
+#     1) choose a random "secret" word
+#     2) mix up the letters
+#     3) display the word
+#     4) let the user guess what the word is
+#     5) tell the user if they got it right or wrong
+import random
+
+
+# main program logic
+def main():
+    # create a list of possible answers
+    possible = ["teal", "red", "purple", "green", "pink"]
+    # set the "category" to give the user a hint
+    category = "colors"
+
+    # welcome message
+    print("Welcome to word jumble!")
+    print("Try to guess the word -- category is", category, ".\n")
+
+    # randomly select one of the answers for this game
+    answer = random.choice(possible)
+    # put the letters from the answer into a list
+    letters = list(answer)
+    print(letters)
+    # scramble the letters
+    shuffle(letters)
+
+    # display the letters with spaces between them
+    for letter in letters:
+        print(letter, end=" ")
+
+    # get the user's guess; strip whitespace and make it lowercase
+    guess = input("\nYour guess: ").strip().lower()
+    # did they get it right?
+    if guess == answer:
+        print("\nAwesome! You got it!")
+    else:
+        print("Incorrect!")
+
+# this function randomly shuffles the values in the given list
+def shuffle(some_list):
+    # step through each subscript in the list
+    # and swap it with a randomly chosen new subscript:
+    #      1) choose a random index value for the left side of the swap
+    #      2) choose a random index value for the right side -- make sure they are different
+    #      3) swap the values
+    for index in range(len(some_list)):
+        new_position = random.randrange(0, len(some_list))      # choose a random index value
+        while new_position == index:
+            new_position = random.randrange(0, len(some_list))      # get a different index
+        # use a trple to swap the positions of the values
+        (some_list[index], some_list[new_position]) = (some_list[new_position], some_list[index])
+        print(index, new_position, some_list)       # debug statement
+main()
