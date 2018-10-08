@@ -1,0 +1,26 @@
+# The following two files contain names of popular Boy's names and popular Girl's names. Download
+# them and add them to your project file.
+# Then, write a program that reads the contents of the two files into two separate lists. The user
+# should be able to enter a boy's name or a girl's name. The application should check both lists, and
+# then display messages indicating whether the names were among the most popular if the name was
+# on one of the lists or that the name was not on the lists of popular names.
+
+
+def main():
+    infile = open('BoyNames.txt', 'r')
+    names = infile.readlines()
+    infile.close()
+
+    infile = open('GirlNames.txt', 'r')
+    names = infile.readlines()
+    infile.close()
+
+    search = input("Please enter a name: ")
+
+    if search in names:
+        print(search, 'was one of the most popular names.')
+    elif search:
+        print(search, 'is not on the list.')
+
+
+main()
