@@ -71,6 +71,7 @@ print(list3)
 list3.remove(5)
 print(list3)
 # print the maximum item from list 3
+list3.max()
 print(list3)
 print("\n")
 
@@ -117,4 +118,4 @@ print("\n")
 # TODO 7.9 Tuples
 # convert the months list to a tuple
 months_as_tuple = tuple(months)
-print(months_as_tuple
+print(months_as_tuple)
