@@ -1,29 +1,27 @@
-# Modify the program so that the rainfall for each month is stored into a list. Eliminate the user's
-# ability to select the number of years, you will just work with one year's data.   The program
-# should calculate and display the total rainfall for the year, the average monthly rainfall the year,
-# and the months with the highest and lowest amounts of rain for the year. Hint: convert months
-# to a list so you can use the index value to print the max and min months.
+# Modify the program so that the rainfall for each month is stored into a list. Eliminate the user's ability to select
+# the number of years, you will just work with one year's data.   The program should calculate and display the
+# total rainfall for the year, the average monthly rainfall the year, and the months with the highest and lowest
+# amounts of rain for the year. Hint: convert months to a list so you can use the index value to print the max
+# and min months.
 
 
 def main():
 
     total = 0
-    num_years = 12
+    empty_list = []
+    years = 0
     month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
-    years = int(input("How much rain fell during the month of", month, "?"))
     for year in range(years):
-
-        for month in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']:
-            inches = float(input('How much rain fell during the month of ' + month + '?'))
-            total += inches
-
+        inches = int(input('How much rain fell during the month of ' + month + '?'))
+        inches = empty_list
+        empty_list.append(inches)
+        total += inches
     average = total/(years * 12)
 
-    print("The month of", min(month), "had the least amount of rain, with", format(min(month), ',.2f'), "inches of rain.")
-    print("The month of", max(month), "has the most amount of rain, with", format(max(month), ',.2f'), "inches of rain.")
-    print('The total amount of rainfall was', format(total, ',.2f'), 'inches.')
-    print('The average monthly rainfall was', format(average, ',.2f'), 'inches.')
+    print("The month of", + min(month) + "had the least amount of rain, with", min(inches), "inches of rain.")
+    print("The month of", + max(month) + "had the most amount of rain, with", max(inches), "inches of rain.")
+    print('The total amount of rainfall was', format(total, ',.2f'), 'inches')
+    print('The average amount of rainfall was', format(average, ',.2f'), 'inches')
 
 
 main()
