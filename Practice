@@ -71,7 +71,7 @@ print(list3)
 list3.remove(5)
 print(list3)
 # print the maximum item from list 3
-list3.max()
+max(list3)
 print(list3)
 print("\n")
 
