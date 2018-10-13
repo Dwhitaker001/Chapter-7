@@ -8,20 +8,34 @@
 def main():
 
     total = 0
-    empty_list = []
-    years = 0
-    month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    for year in range(years):
-        inches = int(input('How much rain fell during the month of ' + month + '?'))
-        inches = empty_list
-        empty_list.append(inches)
-        total += inches
-    average = total/(years * 12)
+    i = 0
+    check1 = 0
+    check2 = 10000000
 
-    print("The month of", + min(month) + "had the least amount of rain, with", min(inches), "inches of rain.")
-    print("The month of", + max(month) + "had the most amount of rain, with", max(inches), "inches of rain.")
-    print('The total amount of rainfall was', format(total, ',.2f'), 'inches')
-    print('The average amount of rainfall was', format(average, ',.2f'), 'inches')
+    month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    empty_list = [0] * len(month)
+
+    while i < len(month):
+        print("How much rain was there during the month of ", month[i])
+        empty_list[i] = int(input())
+
+        total += empty_list[i]
+
+        if check1 < empty_list[i]:
+            check1 = empty_list[i]
+            minmonth = i
+
+        if check2 > empty_list[i]:
+            check2 = empty_list[i]
+            maxmonth = i
+
+        i += 1
+    average = total / 12
+
+    print("The month of", month[minmonth], "had the least amount of rain, with", min(empty_list), "inches of rain.")
+    print("The month of", month[maxmonth], "had the most amount of rain, with", max(empty_list), "inches of rain.")
+    print("The total amount of rainfall was:", format(total, ',.2f'), "inches.")
+    print("The average amount of rainfall was:", format(average, ',.2f'), "inches.")
 
 
 main()
