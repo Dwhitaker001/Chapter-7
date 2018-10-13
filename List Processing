@@ -6,11 +6,28 @@
 # 3. Pass both the list and the user's number to a function and have it display all numbers in the
 # list that are greater than the user's number. If there are not any, display a message that
 # explains there are no numbers in the list greater than the entered number.
+from random import randint
 
 
 def main():
+    i = 0
+    index = 0
+    whole_number = 0
+    randNums = [0] * 20
+    number = 0
 
-    number = int(input("Please enter a whole number between 0 and 100: "))
+    while number > 100 or number < 1:
+
+        try:
+            number = int(input("Please enter a whole number between 1 and 100: "))
+
+        except:
+            print("The number does not exist.")
+    print("Your number is", number)
+    for i in randNums:
+        randNums[i] = randint(1, 100)
+        if randNums[i] > number:
+            print(randNums[i])
 
 
 main()
