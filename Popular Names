@@ -27,8 +27,6 @@ def main():
 
     input_file.close()
 
-    all_names = boy_names + girl_names
-
     search = input("Please enter a name: ")
 
     if search in boy_names:
