@@ -11,9 +11,7 @@ from random import randint
 
 def main():
     i = 0
-    index = 0
-    whole_number = 0
-    randNums = [0] * 20
+    rand_nums = [0] * 20
     number = 0
 
     while number > 100 or number < 1:
@@ -24,10 +22,10 @@ def main():
         except:
             print("The number does not exist.")
     print("Your number is", number)
-    for i in randNums:
-        randNums[i] = randint(1, 100)
-        if randNums[i] > number:
-            print(randNums[i])
+    for i in rand_nums:
+        rand_nums[i] = randint(1, 100)
+        if rand_nums[i] > number:
+            print(rand_nums[i])
 
 
 main()
