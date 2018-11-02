@@ -10,10 +10,7 @@ from random import randint
 
 
 def main():
-    i = 0
-    rand_nums = [0] * 20
     number = 0
-
     while number > 100 or number < 1:
 
         try:
@@ -21,11 +18,24 @@ def main():
 
         except:
             print("The number does not exist.")
-    print("Your number is", number)
+    return number
+
+
+def main2():
+    rand_nums = [0] * 20
     for i in rand_nums:
         rand_nums[i] = randint(1, 100)
-        if rand_nums[i] > number:
-            print(rand_nums[i])
+    return rand_nums
 
 
-main()
+def main3():
+    number = main()
+    rand_nums = main2()
+    print("Your number is", number)
+    print(rand_nums)
+    for i in rand_nums:
+        if i > number:
+            print(i)
+
+
+main3()
